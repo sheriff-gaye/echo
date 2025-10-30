@@ -3,7 +3,7 @@ import AuthLayout from "../layouts/auth-layout";
 import { SignedInView } from "../views/signed-in-view";
 
 export const AuthGuard = ({ children }: { children: React.ReactNode }) => {
-  return;
+  return(
   <>
     <AuthLoading>
       <AuthLayout>
@@ -14,6 +14,6 @@ export const AuthGuard = ({ children }: { children: React.ReactNode }) => {
       <AuthLayout>
         <SignedInView />
       </AuthLayout>
-    </Unauthenticated>
-  </>;
+    </Unauthenticated> 
+  </>);
 };
