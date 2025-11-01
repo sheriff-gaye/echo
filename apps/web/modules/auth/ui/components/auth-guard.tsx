@@ -1,4 +1,5 @@
-import { Authenticated, AuthLoading, Unauthenticated } from "convex/react";
+"use client"
+import {  AuthLoading, Unauthenticated } from "convex/react";
 import AuthLayout from "../layouts/auth-layout";
 import { SignedInView } from "../views/signed-in-view";
 
