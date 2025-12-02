@@ -22,6 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      
       <body
         className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased `}
       >
@@ -29,6 +30,7 @@ export default function RootLayout({
           <Providers><AuthGuard> {children}</AuthGuard></Providers>
         </ClerkProvider>
       </body>
+       
     </html>
   )
 }

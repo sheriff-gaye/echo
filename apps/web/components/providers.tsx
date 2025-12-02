@@ -5,8 +5,6 @@ import {  ConvexReactClient } from "convex/react"
 import {  useAuth } from "@clerk/nextjs";
 
 
-
-
 if (!process.env.NEXT_PUBLIC_CONVEX_URL){
   throw new Error ("Missing NEXT_PUBLIC_CONVEX_URL in your environment File");
 }
