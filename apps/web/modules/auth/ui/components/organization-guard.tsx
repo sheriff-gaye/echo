@@ -4,11 +4,7 @@ import { useOrganization } from "@clerk/nextjs";
 import { AuthGuard } from "./auth-guard";
 import { OrgSelectView } from "../views/org-select-view";
 
-export const OrganizationGuard = ({
-  children
-}: {
-  children: React.ReactNode;
-}) => {
+export const OrganizationGuard = ({ children }: { children: React.ReactNode; }) => {
   const { organization } = useOrganization();
 
   if (!organization) {
@@ -18,6 +14,6 @@ export const OrganizationGuard = ({
       </AuthGuard>
     );
   }
-  return;
-  <>{children}</>;
+
+  return <>{children}</>;  
 };
