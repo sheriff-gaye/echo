@@ -12,8 +12,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@vapi-ai/web": "^2.5.2",
+    "@workspace/backend": "workspace:*",
     "@workspace/math": "workspace:*",
-     "@workspace/backend": "workspace:*",
     "@workspace/ui": "workspace:*",
     "convex": "^1.25.4",
     "lucide-react": "^0.475.0",
