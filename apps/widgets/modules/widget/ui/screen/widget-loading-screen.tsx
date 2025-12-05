@@ -90,7 +90,7 @@ export const WidgetLoadingScreen = ({
     setLoadingMessage("Validating Session...");
 
     validateContactSessions({
-      contactSessionId: contactSessionId as Id<"contactSession">
+      contactSessionId
     })
       .then((result) => {
         setSessionValid(result.valid);

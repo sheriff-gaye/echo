@@ -14,14 +14,23 @@ import { Button } from "@workspace/ui/components/button";
 import { useMutation } from "convex/react";
 import { api } from "@workspace/backend/_generated/api";
 import { Doc } from "@workspace/backend/_generated/dataModel";
+import { useAtomValue, useSetAtom } from "jotai";
+import {
+  contactSessionIdAtomFamily,
+  organizationIdAtom
+} from "../../atoms/widget-atom";
 
 const formSchema = z.object({
   name: z.string().min(1, "name is require"),
   email: z.string().email("invalid email address")
 });
 
+const organizationId = "1234";
 export const WidegtAuthScreen = () => {
-  const organizationId = "1234";
+  const organizationId = useAtomValue(organizationIdAtom);
+  const setContactSessionId = useSetAtom(
+    contactSessionIdAtomFamily(organizationId || "")
+  );
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -56,7 +65,7 @@ export const WidegtAuthScreen = () => {
       organizationId
     });
 
-    console.log(contactSessionId);
+    setContactSessionId(contactSessionId);
   };
   return (
     <>
